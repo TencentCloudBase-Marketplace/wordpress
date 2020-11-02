@@ -1,0 +1,46 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "wordpress",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "wordpress",
+          "servicePath": "/",
+          "uploadType": "image",
+          "containerPort": 80,
+          "imageInfo": {
+            "imageUrl": "wordpress:5.5.1"
+          },
+          "envVariables": {
+            "WORDPRESS_DB_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
+            "WORDPRESS_DB_NAME": "wordpress"
+          },
+          "volumeMounts": {
+            "/var/www/html": "WORDPRESS_CFS"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "WORDPRESS_CFS"
+        },
+        {
+          "type": "CynosDB",
+          "name": "WordPress",
+          "envMap": {
+            "IP": "DB_IP",
+            "PORT": "DB_PORT",
+            "USERNAME": "WORDPRESS_DB_USER",
+            "PASSWORD": "WORDPRESS_DB_PASSWORD"
+          }
+        }
+      ]
+    }
+  }
+}
