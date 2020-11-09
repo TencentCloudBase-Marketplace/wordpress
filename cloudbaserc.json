@@ -19,7 +19,7 @@
             "WORDPRESS_DB_NAME": "wordpress"
           },
           "volumeMounts": {
-            "/var/www/html": "WORDPRESS_CFS"
+            "/var/www/html": "wordpress-cfs"
           }
         }
       }
@@ -28,7 +28,7 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "WORDPRESS_CFS"
+          "name": "wordpress-cfs"
         },
         {
           "type": "CynosDB",
