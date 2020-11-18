@@ -32,7 +32,7 @@
         },
         {
           "type": "CynosDB",
-          "name": "WordPress",
+          "name": "wordpress",
           "envMap": {
             "IP": "DB_IP",
             "PORT": "DB_PORT",
