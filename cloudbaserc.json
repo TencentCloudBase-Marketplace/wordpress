@@ -9,7 +9,8 @@
         "inputs": {
           "serviceName": "wordpress",
           "servicePath": "/",
-          "uploadType": "image",
+          "localPath": "./",
+          "uploadType": "package",
           "containerPort": 80,
           "imageInfo": {
             "imageUrl": "wordpress:5.5.1"
