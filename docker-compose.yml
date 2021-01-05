@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  dq-backend:
+    image: wordpress:5.5.1
+    volumes:
+      - ./wp:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root@1234
+      WORDPRESS_DB_NAME: wordpress
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    ports:
+      - "80:80"
+  mysql:
+    image: 'mysql:5.7'
+    environment:
+      MYSQL_ROOT_PASSWORD: root@1234
+      MYSQL_USER: root
+    restart: always
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"

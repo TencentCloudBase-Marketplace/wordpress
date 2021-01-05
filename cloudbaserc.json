@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "envId": "{{env.ENV_ID}}",
+  "envId": "wilsonsliu-4ecec0",
   "framework": {
     "name": "wordpress",
     "plugins": {
@@ -17,9 +17,6 @@
           "envVariables": {
             "WORDPRESS_DB_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
             "WORDPRESS_DB_NAME": "wordpress"
-          },
-          "volumeMounts": {
-            "/var/www/html": "wordpress-cfs"
           }
         }
       }
