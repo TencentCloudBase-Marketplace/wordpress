@@ -9,11 +9,8 @@
         "inputs": {
           "serviceName": "wordpress",
           "servicePath": "/",
-          "uploadType": "image",
+          "uploadType": "package",
           "containerPort": 80,
-          "imageInfo": {
-            "imageUrl": "wordpress:5.5.1"
-          },
           "envVariables": {
             "WORDPRESS_DB_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
             "WORDPRESS_DB_NAME": "wordpress"
